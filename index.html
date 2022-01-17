@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD Operations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Food item's List</h1>
+  <form action="javascript:void(0);" onsubmit="searchbar()"> 
+    <div>Search for an Item:</div>
+    <input type="text" id="search" placeholder="Search..." required>
+    <input type="submit" value="Search">
+    <input type="submit" value="Reset" onclick="location.reload()">
+  </form>
+  <p></p>
+  <div>Add another Item: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Add a category:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Add a price:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> </lable></div>
+  <form action="javascript:void(0);" onsubmit="additem()"> 
+    <input type="text" id="add-item" placeholder="Add new item" required>
+    <select name="add-category" id="add-category" required>
+      <option value="" disabled></option>
+      <option value="Vegies">Vegies</option>
+      <option value="Fruit">Fruit</option>
+      <option value="Dairy">Dairy</option>
+      <option value="Red Meat">Red Meat</option>
+    </select>
+    <input type="text" id="add-price" placeholder="Add a price" required>
+    <!-- <input type="text" id="add-continent" placeholder="Add new continent" required> -->
+    <input type="submit" value="Add">
+  </form>
+
+  <div id="editForm">
+    <form action="javascript:void(0);" id="saveEdit">
+      <input type="text" id="edit-item">
+      <input type="text" id="edit-category">
+      <input type="text" id="edit-price">
+
+      <input type="submit" value="Edit" /> <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+    </form>
+  </div>
+
+  <p id="counter"></p>
+
+  <table>
+    <tr>
+        <th id="name" onclick="sortitems()">ID</th>
+      <th id="name" onclick="sortitems()">Item</th>
+      <th id="category" onclick="sortcategory()">Category</th>
+      <th id="price" onclick="sortprice()">Price</th>
+
+    </tr>
+      <tbody id="items">
+      </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
